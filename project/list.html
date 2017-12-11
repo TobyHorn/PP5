@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Anime Manager</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://use.fontawesome.com/966a253930.css">
+		<link rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="main.css">
+	</head>
+	
+	<body>
+        <div id="wrapper"> <!-- Wrapper used to center all content -->
+           
+            <header>
+                <div> <!-- This div is only for flex layout purposes -->
+                    <img src="" alt="Anime Manager Logo" height="100px" width="250px" />
+                    <h1>Anime Manager</h1>
+                </div>
+                
+                <nav>
+                    <ul>
+                        <li><a href="/main.html">Home</a></li>
+                        <li><a href="/top.html">Top Anime</a></li>
+                        <li class="currentPg"><a href="/list.html">My List</a></li>
+                    </ul>
+                    <form action="" aria-label="Search Anime" method="get">
+                        <input type="number" min="1" name="navSearch" id="navSearch" placeholder="Anime id..." autofocus />
+                        <button type="button" id="navSearchBtn" name="navSearchBtn"><i class="fa fa-search"></i> Search</button>
+                    </form>
+                </nav>
+            </header>
+            
+            
+            <main>
+                <h2>My List</h2>
+                <section id="list">
+                    
+                </section>
+                
+                <section id="overlay">
+                    <h2>Editing Anime</h2>
+                    <form>
+                        <label for="title">Title</label>
+                        <input type="text" name="title" id="title" />
+                        <label for="status">Status</label>
+                        <select name="status" id="status">
+                            <option value="1">Watching</option>
+                            <option value="2">Completed</option>
+                            <option value="3">On-Hold</option>
+                            <option value="4">Dropped</option>
+                        </select>
+                        <div> <!-- Used for stying -->
+                            <label for="eps">Episodes Seen</label>
+                            <input type="number" min="0" name="eps" id="eps" />
+                            <label for="rating">Rating</label>
+                            <input type="number" min="1" max="10" name="rating" id="rating" />
+                            <button type="button" id="cancelBtn">Cancel</button>
+                            <button type="button" id="saveBtn">Save</button>
+                        </div>
+                    </form>
+                </section>
+            </main>
+            
+            
+            <footer>
+                <p>Toby Horn - Full Sail University 2017</p>
+                <ul>
+                    <li><a href="/main.html">Home</a></li>
+                    <li><a href="/top.html">Top Anime</a></li>
+                    <li><a href="/list.html">My List</a></li>
+                </ul>
+            </footer>
+            
+        </div> <!-- End Wrapper -->
+        <script src="utils.js"></script>
+        <script src="list.js"></script>
+    </body>
+</html>

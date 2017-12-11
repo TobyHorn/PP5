@@ -1,0 +1,145 @@
+/* BASE STYLING */
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    color: #ccc;
+    background-color: #888;
+    font-family: "Constantia", "Lucida Bright", "Lucidabright", "Lucida Serif", "Lucida", "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", "Georgia", serif;
+
+}
+
+#wrapper {
+    max-width: 120rem;
+    min-height: 100%;
+    position: relative;
+    margin: auto auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "HelveticaNeueExtended", "HelveticaNeue-Extended", "Helvetica Neue Extended", "HelveticaNeueRomanExtended", "HelveticaNeue-Roman-Extended", "Helvetica Neue Roman Extended", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; 
+    font-weight: bold; 
+}
+
+h1 {
+    font-size: 3.6rem;
+}
+
+h2 {
+    font-size: 3.0rem;
+}
+
+h3 {
+    font-size: 2.6rem;
+}
+
+p, input, select, button, ul, li, label {
+    font-size: 1.6rem;
+}
+
+/*HEADER*/
+header {
+    background-color: #555;
+    height: 20rem;
+    padding-top: 3rem;
+    color: #eb4d4d;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    padding-right: 35rem; /*This padding is to make up for the width of the logo*/
+    margin: auto;
+}
+
+
+/*nav*/
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3.5rem;
+    background-color: #eee;
+    align-items: center;
+    padding: 0.5rem 0 0.5rem 0;
+    color: #111;
+}
+
+nav ul {
+    display: flex;
+    margin-left: 5rem;
+    font-weight: bold;
+}
+
+nav li {
+    margin: 0 3rem 0 3rem;
+}
+
+
+/*nav form*/
+
+nav form {
+    margin-right: 5rem;
+}
+
+nav form input {
+    border: 1px solid #222;
+    background-color: #ccc;
+    padding: 0.25rem 1rem 0.25rem 1rem;
+    border-radius: 10rem;
+}
+
+nav form input:focus, nav form input:active {
+    border: 1px solid #eb4d4d;
+}
+
+nav form button {
+    border: 1px solid #222;
+    border-radius: 25rem;
+    background-color: #ccc;
+    font-weight: bold;
+    padding: 0.25rem 0.66rem;
+    margin-left: 1rem;
+}
+
+nav form button:focus, nav form button:active {
+    border: 1px solid #eb4d4d;
+}
+
+/*FOOTER*/
+
+footer {
+    width: 100%;
+    background-color: #555;
+    color: #f1f1f1;
+    height: 10rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*CONTENT*/
+
+main {
+    padding-bottom: 10rem;
+}
+
+/*home*/
+#homeResults {
+    visibility: hidden;
+}
+
+/*list*/
+#overlay {
+    display: none;
+}
