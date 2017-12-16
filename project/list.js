@@ -71,7 +71,7 @@ class View {
     
     constructor() {
         
-        //Listen for the data_done event
+        //Listen for the list_done event
         document.addEventListener("list_done", this.display.bind(this));
         
     };

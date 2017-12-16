@@ -89,7 +89,7 @@ class Controller {
         //Create the event listeners and bind "this"
         homeBtn.addEventListener("click", this.getResults.bind(this));
         navBtn.addEventListener("click", this.getResults.bind(this));
-        addBtn.addEventListener("click", this.submitData.bind(this));
+        addBtn.addEventListener("click", this.addData.bind(this));
         
     };
     
@@ -180,20 +180,23 @@ class Controller {
     };
     
     //Create a method pass along the data to the model and disptach the event
-    submitData(e) {
+    addData(e) {
         //Add the item to the local storage
         localStorage.setItem("list", JSON.stringify(this.dataArr));
         
         //Make My List visible
         document.querySelectorAll("nav ul li")[2].style.visibility = "visible";
         document.querySelectorAll("footer ul li")[2].style.visibility = "visible";
-
+        
+        //Alert the user
+        document.getElementById("animeAdded").style.visibility = "visible";
+        
         //Create the new event to be listened for by the model
         let evt = new Event("data_collected");
-
+        
         //Set the anime parameter to the data collected
         evt.anime = this.dataArr;
-
+        
         //Dispatch the event
         document.dispatchEvent(evt);
     };
