@@ -44,19 +44,18 @@ p, input, select, button, ul, li, label {
 /*HEADER*/
 header {
     background-color: #555;
-    height: 20rem;
+    height: 13.7rem;
     padding-top: 3rem;
     color: #eb4d4d;
-}
-
-header div {
-    display: flex;
-    align-items: center;
+    margin-bottom: 2.5rem;
 }
 
 header h1 {
-    padding-right: 35rem; /*This padding is to make up for the width of the logo*/
-    margin: auto;
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
 }
 
 
@@ -82,6 +81,14 @@ nav li {
     margin: 0 3rem 0 3rem;
 }
 
+nav li a {
+    color: #2191FB;
+}
+
+nav li a:hover {
+    color: #69DC9E;
+}
+
 
 /*nav form*/
 
@@ -92,25 +99,25 @@ nav form {
 nav form input {
     border: 1px solid #222;
     background-color: #ccc;
-    padding: 0.25rem 1rem 0.25rem 1rem;
+    padding: 0.2rem 1rem 0.3rem 1rem;
     border-radius: 10rem;
 }
 
 nav form input:focus, nav form input:active {
-    border: 1px solid #eb4d4d;
+    border: 1px solid #69DC9E;
 }
 
 nav form button {
     border: 1px solid #222;
     border-radius: 25rem;
-    background-color: #ccc;
+    background-color: #69DC9E;
     font-weight: bold;
     padding: 0.25rem 0.66rem;
     margin-left: 1rem;
 }
 
 nav form button:focus, nav form button:active {
-    border: 1px solid #eb4d4d;
+    border: 1px solid #69DC9E;
 }
 
 /*FOOTER*/
@@ -125,7 +132,29 @@ footer {
     left: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+footer p {
+    margin-left: 2rem;
+}
+
+footer ul {
+    margin-right: 2rem;
+    display: flex;
+}
+
+footer ul li {
+    margin: 0 1rem 0 1rem;
+}
+
+footer ul li a {
+    font-weight: bold;
+    color: #2191fb;
+}
+
+footer ul li a:hover {
+    color: #69dc9e;
 }
 
 /*CONTENT*/
@@ -134,12 +163,306 @@ main {
     padding-bottom: 10rem;
 }
 
+
 /*home*/
+#home h2 {
+    text-align: center;
+    color: #FF934F;
+}
+
+#home > p {
+    text-align: center;
+    margin: 0.5rem 0 0.5rem 0;
+    color: #111;
+}
+
+#home > p:nth-of-type(1) {
+    margin: 2rem 0 0 0;
+}
+
+#home > p:last-of-type {
+    margin: 0 0 2rem 0;
+    text-decoration: underline;
+}
+
+#home h3 {
+    text-align: center;
+    color: #69dc9e;
+    margin-bottom: 3rem;
+}
+
+#home form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+#home form input {
+    border: 1px solid #222;
+    background-color: #ccc;
+    padding: 0.3rem 1.5rem 0.5rem 1.5rem;
+    border-radius: 10rem;
+    font-size: 2.0rem;
+}
+
+#home form input:focus, #home form input:active {
+    border: 1px solid #fff;
+}
+
+#home form button {
+    border: 1px solid #222;
+    border-radius: 25rem;
+    background-color: #69DC9E;
+    font-weight: bold;
+    padding: 0.25rem 0.66rem;
+    margin-left: 1rem;
+    font-size: 1.6rem;
+}
+
+#home form button:focus, nav form button:active {
+    border: 1px solid #fff;
+}
+
 #homeResults {
     visibility: hidden;
+    width: 95%;
+    display: flex;
+    margin: auto auto;
+    margin-bottom: 5rem;
 }
+
+#homeResults img {
+    border-radius: 10px;
+}
+
+#homeResults > div p:first-of-type {
+    color: #111;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 2.0rem;
+}
+
+#homeResults > div p:nth-of-type(2) {
+    margin: auto auto;
+    margin-top: 3rem;
+}
+
+#homeResults > div p:last-of-type {
+    margin: auto auto;
+    margin-top: 3rem;
+    color: #eb4d4d;
+    padding: 1rem;
+    border-radius: 2rem;
+    background-color: #111;
+}
+
+#homeResults div button {
+    border: 1px solid #222;
+    border-radius: 25rem;
+    background-color: #2191fb;
+    font-weight: bold;
+    padding: 0.25rem 0.66rem;
+    font-size: 2.0rem;
+}
+
+#homeResults div button:focus, #homeResults div button:active {
+    border: 1px solid #fff;
+}
+
+#homeResults > div {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5rem;
+}
+
+#homeResults article {
+    color: #111;
+    background-color: #dddddd;
+    border-radius: 20px;
+    padding: 1.5rem;
+}
+
+#homeResults article:first-of-type {
+    margin-bottom: 3rem;
+}
+
+#homeResults article ul div {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+}
+
+#homeResults article ul div li {
+    background-color: #bfbfbf;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+}
+
+#homeResults article ul div li:first-of-type {
+    width: 50%;
+}
+
+#homeResults article ul div li:last-of-type {
+    width: 50%;
+    flex-grow: 1;
+}
+
+
+
+/*top*/
+#top {
+    column-count: 2;
+    margin: 3rem;
+}
+
+#topMain h2 {
+    text-align: center;
+    color: #eee;
+}
+
+#top li img {
+    display: block;
+    margin: auto auto;
+    border-radius: 10px;
+}
+
+#top > li {
+    display: block;
+    min-height: 65rem;
+    margin: 1rem;
+}
+
+#top article {
+    padding: 1rem;
+    margin-top: 2rem;
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+#top article ul {
+    column-count: 2;
+    text-align: center;
+}
+
+#top article ul li {
+    padding: 0.5rem;
+    background-color: #888;
+    border-radius: 10px;
+    color: #fff;
+}
+
+#top article ul li:first-of-type, #top article ul li:nth-last-of-type(2), #top article ul li:nth-last-of-type(3) {
+    margin-bottom: 1.75rem;
+}
+
+#top article p {
+    margin-top: 1rem;
+    text-overflow: ellipsis;
+    background-color: #888;
+    padding: 0.5rem;
+    border-radius: 10px;
+    color: #111;
+}
+
+
 
 /*list*/
 #overlay {
+    position: absolute;
+    top: 14rem;
+    bottom: 10.5rem;
+    left: 0;
+    right: 0;
+    background-color: #111;
+    border-radius: 25px;
+    padding: 3rem;
     display: none;
+    opacity: 0.9;
+}
+
+#listMain #overlay h2 {
+    color: #eb4d4d;
+}
+
+#overlay form {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: auto auto;
+}
+
+#overlay form label {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#overlay form div label {
+    display: block;
+}
+
+#overlay form input, #overlay form select {
+    border-radius: 5px;
+    font-size: 2.2rem;
+    padding: 0.5rem;
+    margin: 0 0 2.5rem 0
+}
+
+#overlay form div div {
+    display: flex;
+    justify-content: center;
+}
+
+#overlay form div div button {
+    padding: 1rem 3rem 1rem 3rem;
+    border-radius: 20px;
+    font-size: 2.8rem;
+}
+
+#overlay form div div button:first-of-type {
+    background-color: #eb4d4d;
+    margin-right: 2rem;
+}
+
+#overlay form div div button:last-of-type {
+    background-color: #69dc9e;
+    margin-left: 2rem;
+}
+
+#list {
+    display: flex;
+    flex-direction: column;
+}
+
+#listMain h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #69dc9e;
+}
+
+#list article ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+#list article ul {
+    background-color: #555;
+    margin: 1rem;
+    border-radius: 10rem;
+}
+
+#list article ul li {
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+#list article ul li p {
+    font-size: 2.2rem;
+}
+
+#list article button {
+    background-color: #33ccff;
+    padding: 0.5rem 1rem 0.5rem 1rem;;
+    border-radius: 10px;
 }

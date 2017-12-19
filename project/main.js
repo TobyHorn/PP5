@@ -150,6 +150,9 @@ class Controller {
                     searchData.rating = resObj.rating;
                     searchData.score = parseFloat(resObj.score).toFixed(2);
                     searchData.released = resObj.premiered;
+                    searchData.listEps = 0;
+                    searchData.listRating = 0;
+                    searchData.listStatus = 1;
                     
                     //Add the data to the data object
                     resultArr.push(searchData);
@@ -190,6 +193,11 @@ class Controller {
         
         //Alert the user
         document.getElementById("animeAdded").style.visibility = "visible";
+        
+        //Set to hide alert after 3 seconds
+        setTimeout(function(){
+            document.getElementById("animeAdded").style.visibility = "hidden";
+        }, 3000);
         
         //Create the new event to be listened for by the model
         let evt = new Event("data_collected");
@@ -244,14 +252,13 @@ class View {
         document.getElementById("homeImg").src = e.anime.img;
         document.getElementById("homeImg").alt = e.anime.title + " thumbnail";
         document.getElementById("homeSummary").innerHTML = "<p>"+e.anime.summary+"</p>";
-        document.getElementById("homeTitle").innerHTML = "<p>"+e.anime.title+"</p>";
-        document.getElementById("homeEps").innerHTML = "<p>"+e.anime.episodes+"</p>";
-        document.getElementById("homeType").innerHTML = "<p>"+e.anime.type+"</p>";
-        document.getElementById("homeGenre").innerHTML = "<p>"+e.anime.genre+"</p>";
-        document.getElementById("homeStatus").innerHTML = "<p>"+e.anime.status+"</p>";
-        document.getElementById("homeRating").innerHTML = "<p>"+e.anime.rating+"</p>";
-        document.getElementById("homeScore").innerHTML = "<p>"+e.anime.score+"</p>";
-        document.getElementById("homeReleased").innerHTML = "<p>"+e.anime.released+"</p>";
+        document.getElementById("homeTitle").textContent = e.anime.title;
+        document.getElementById("homeEps").innerHTML = "<p>Episodes: "+e.anime.episodes+"</p>";
+        document.getElementById("homeType").innerHTML = "<p>Type: "+e.anime.type+"</p>";
+        document.getElementById("homeGenre").innerHTML = "<p>Genre: "+e.anime.genre+"</p>";
+        document.getElementById("homeStatus").innerHTML = "<p>Status: "+e.anime.status+"</p>";
+        document.getElementById("homeRating").innerHTML = "<p>Rating: "+e.anime.rating+"</p>";
+        document.getElementById("homeScore").innerHTML = "<p>Score: "+e.anime.score+"</p>";
         
         //Display the section that shows the result
         let resultsSec = document.getElementById("homeResults").style.visibility = "visible";

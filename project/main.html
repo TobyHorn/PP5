@@ -13,10 +13,7 @@
         <div id="wrapper"> <!-- Wrapper used to center all content -->
            
             <header>
-                <div> <!-- This div is only for flex layout purposes -->
-                    <img src="" alt="Anime Manager Logo" height="100px" width="250px" />
-                    <h1>Anime Manager</h1>
-                </div>
+                <h1>Anime Manager</h1>
                 
                 <nav>
                     <ul>
@@ -35,7 +32,7 @@
             <main>
                 <section id="home">
                     <h2>Welcome to Anime Manager!</h2>
-                    <p>Anime Manager is an application built by Toby Horn for a college assignment at Full Sail University. This application utilized an API created for a website called MyAnimeList. Anime Manager is a way to create and track your own personal list of anime.</p>
+                    <p>Anime Manager is an application built by Toby Horn for a college assignment at Full Sail University.</p><p>This application utilized an API created for a website called MyAnimeList.</p><p>Anime Manager is a way to create and track your own personal list of anime.</p>
                     <p>Note: Local Storage is being used to store user data, so clearning website data will delete your personal list.</p>
                     
                     <h3>To begin, please use the search field below.</h3>
@@ -47,41 +44,42 @@
                 
                 <section id="homeResults">
                     <div> <!-- Used for styling -->
+                        <p id="homeTitle">Title</p>
                         <img id="homeImg" src="" height="335" width="225" alt="" />
-                        <button type="button" id="addAnimeBtn">Add To List</button>
+                        <p><button type="button" id="addAnimeBtn">Add To List</button></p>
+                        <p id="animeAdded" style="visibility: hidden;">Anime successfully added!</p>
                     </div>
-                    <p id="animeAdded" style="visibility: hidden;">Anime successfully added!</p>
                     <section>
                         <article>
-                            <p id="homeSummary">Summary</p>
+                            <ul>
+                                <div>
+                                    <li id="homeEps">
+                                        <p>Episodes</p>
+                                    </li>
+                                    <li id="homeType">
+                                        <p>Type</p>
+                                    </li>
+                                </div>
+                                <div>
+                                    <li id="homeGenre">
+                                        <p>Genre</p>
+                                    </li>
+                                    <li id="homeStatus">
+                                        <p>Status</p>
+                                    </li>
+                                </div>
+                                <div>
+                                    <li id="homeRating">
+                                        <p>Rating</p>
+                                    </li>
+                                    <li id="homeScore">
+                                        <p>Score</p>
+                                    </li>
+                                </div>
+                            </ul>
                         </article>
                         <article>
-                            <ul>
-                                <li id="homeTitle">
-                                    <p>Title</p>
-                                </li>
-                                <li id="homeEps">
-                                    <p>Episodes</p>
-                                </li>
-                                <li id="homeType">
-                                    <p>Type</p>
-                                </li>
-                                <li id="homeGenre">
-                                    <p>Genre</p>
-                                </li>
-                                <li id="homeStatus">
-                                    <p>Status</p>
-                                </li>
-                                <li id="homeRating">
-                                    <p>Rating</p>
-                                </li>
-                                <li id="homeScore">
-                                    <p>Score</p>
-                                </li>
-                                <li id="homeReleased">
-                                    <p>Released</p>
-                                </li>
-                            </ul>
+                            <p id="homeSummary">Summary</p>
                         </article>
                     </section>
                 </section>

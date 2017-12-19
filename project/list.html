@@ -13,10 +13,7 @@
         <div id="wrapper"> <!-- Wrapper used to center all content -->
            
             <header>
-                <div> <!-- This div is only for flex layout purposes -->
-                    <img src="" alt="Anime Manager Logo" height="100px" width="250px" />
-                    <h1>Anime Manager</h1>
-                </div>
+                <h1>Anime Manager</h1>
                 
                 <nav>
                     <ul>
@@ -32,7 +29,7 @@
             </header>
             
             
-            <main>
+            <main id="listMain">
                 <h2>My List</h2>
                 <section id="list">
                     
@@ -42,9 +39,9 @@
                     <h2>Editing Anime</h2>
                     <form>
                         <label for="title">Title</label>
-                        <input type="text" name="title" id="title" />
+                        <input type="text" name="title" id="listTitle" />
                         <label for="status">Status</label>
-                        <select name="status" id="status">
+                        <select name="status" id="listStatus">
                             <option value="1">Watching</option>
                             <option value="2">Completed</option>
                             <option value="3">On-Hold</option>
@@ -52,11 +49,13 @@
                         </select>
                         <div> <!-- Used for stying -->
                             <label for="eps">Episodes Seen</label>
-                            <input type="number" min="0" name="eps" id="eps" />
+                            <input type="number" min="0" name="eps" id="listEps" />
                             <label for="rating">Rating</label>
-                            <input type="number" min="1" max="10" name="rating" id="rating" />
-                            <button type="button" id="cancelBtn">Cancel</button>
-                            <button type="button" id="saveBtn">Save</button>
+                            <input type="number" min="1" max="10" name="rating" id="listRating" />
+                            <div>
+                                <button type="button" id="cancelBtn">Cancel</button>
+                                <button type="button" id="saveBtn">Save</button>
+                            </div>
                         </div>
                     </form>
                 </section>

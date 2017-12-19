@@ -47,9 +47,18 @@ class Controller {
     
     constructor() {
         
+        if (!localStorage.getItem("list")) {
+            
+            //Hide "My List" if it's empty
+            document.querySelectorAll("nav ul li")[2].style.visibility = "hidden";
+            document.querySelectorAll("footer ul li")[2].style.visibility = "hidden";
+            
+        }
+        
         //Create variables to use
         this.dataArr = [];
         
+        //Listen for the dom to load
         window.addEventListener("DOMContentLoaded", this.getTop(this));
     };
     
@@ -60,11 +69,16 @@ class Controller {
         const baseStr = "https://jikan.me/api/anime/";
         let counter = 1;
         let animeId;
+        let loops = 0;
         
         //Assign the dataArr to a variable
         let topArr = this.dataArr;
         
+        //Instantiate the model and view
+        this.model = new Model();
+        this.view = new View();
         
+        //Loop through 10 times
         for (let i = 10; i > 0; i--) {
             
             //Instantiate the topData object
@@ -112,7 +126,10 @@ class Controller {
 
             //Run the onload method
             xhr.onload = function () { 
-
+                
+                //Increment the loops counter
+                loops++;
+                
                 //get the API response and parse it to JSON
                 const resObj = JSON.parse(xhr.responseText);
 
@@ -150,6 +167,18 @@ class Controller {
                     
                 };
                 
+                //Verify that all 10 items have loaded before trying to access their values
+                if (loops == 10) {
+                    
+                    //Create a new event
+                    let evt = new Event("top-loaded");
+                    
+                    //Assign the results' array to the event's parameter 
+                    evt.top = topArr;
+                    
+                    //Dispatch the event
+                    document.dispatchEvent(evt);
+                }
             };
             
             //open the xhr object with the json data file
@@ -165,30 +194,46 @@ class Controller {
             counter++;
             
         };
-        
-        
-        
-        
-        /*I need to get access to the items within the topData object here*/
-        
-        /*Below are the tests I've ran. I can't think of any other ways to get access 
-        to the values pulled in from the API above*/
-        
-        
-        
-        console.log(this.dataArr[0]); //This returns an object that appears to be empty but has parameter values
-        
-        console.log(topArr[1]); //This returns an object that appears to be empty but has parameter values
-        
-        console.log(e.dataArr[2]); //This returns an object that appears to be empty but has parameter values
-        
-        console.log(this.dataArr[0].title); //This returns an empty value
-        
-        console.log(topArr[0].title); //This returns an empty value
-        
-        console.log(e.dataArr[0].title); //This returns an empty value
-        
     };
     
     
 };
+
+//create Model
+class Model {
+    
+    constructor() {
+        
+    }
+    
+}
+
+//create View
+class View {
+    
+    constructor() {
+        
+        //Listen for the top-loaded event to be dispatched then run an anonymous function
+        document.addEventListener("top-loaded", (e) => {
+            
+            //Create variables to be used
+            let i = 0;
+            let ul = document.getElementById("top");
+            
+            //loop through all 10 items
+            e.top.forEach(() => {
+                
+                //Check if the genre is undefined, if so change it's value to "Unknown"
+                let genre = e.top[i].genre[0] != undefined ? e.top[i].genre[0] : "Unknown";
+                
+                //Assign and display each item's values
+                ul.innerHTML += "<li><img src='"+e.top[i].img+"' alt='"+e.top[i].title+" thumbnail' width='112.5px' height='175px' /><article><ul><li>"+e.top[i].title+"</li><li>"+e.top[i].episodes+"</li><li>"+e.top[i].type+"</li><li>"+genre+"</li></ul><p>"+e.top[i].summary+"</p></article></li>";
+                
+                //Increment the counter
+                i++;
+            });
+            
+        });
+    }
+    
+}
