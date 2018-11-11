@@ -97,7 +97,7 @@ class Controller {
     getResults(e) {
         
         //Create variable to hold the base and end of the api string
-        const baseStr = "https://jikan.moe/api/anime/";
+        const baseStr = "https://api.jikan.moe/anime/";
         let endStr;
         
         //Create a new variable to hold the value of the data array
