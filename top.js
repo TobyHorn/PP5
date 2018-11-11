@@ -66,7 +66,7 @@ class Controller {
     getTop(e) {
         
         //Create variables
-        const baseStr = "https://jikan.moe/api/anime/";
+        const baseStr = "https://api.jikan.moe/anime/";
         let counter = 1;
         let animeId;
         let loops = 0;
